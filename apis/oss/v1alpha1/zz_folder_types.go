@@ -19,6 +19,10 @@ import (
 
 type FolderInitParameters struct {
 
+	// (String) The uid of the parent folder. If set, the folder will be nested. If not set, the folder will be created in the root folder.
+	// The uid of the parent folder. If set, the folder will be nested. If not set, the folder will be created in the root folder. Note: This requires the nestedFolders feature flag to be enabled on your Grafana instance.
+	ParentFolderUID *string `json:"parentFolderUID,omitempty" tf:"parent_folder_uid,omitempty"`
+
 	// (Boolean) Prevent deletion of the folder if it is not empty (contains dashboards or alert rules). Defaults to false.
 	// Prevent deletion of the folder if it is not empty (contains dashboards or alert rules). Defaults to `false`.
 	PreventDestroyIfNotEmpty *bool `json:"preventDestroyIfNotEmpty,omitempty" tf:"prevent_destroy_if_not_empty,omitempty"`
@@ -40,6 +44,10 @@ type FolderObservation struct {
 	// (String) The Organization ID. If not set, the Org ID defined in the provider block will be used.
 	// The Organization ID. If not set, the Org ID defined in the provider block will be used.
 	OrgID *string `json:"orgId,omitempty" tf:"org_id,omitempty"`
+
+	// (String) The uid of the parent folder. If set, the folder will be nested. If not set, the folder will be created in the root folder.
+	// The uid of the parent folder. If set, the folder will be nested. If not set, the folder will be created in the root folder. Note: This requires the nestedFolders feature flag to be enabled on your Grafana instance.
+	ParentFolderUID *string `json:"parentFolderUID,omitempty" tf:"parent_folder_uid,omitempty"`
 
 	// (Boolean) Prevent deletion of the folder if it is not empty (contains dashboards or alert rules). Defaults to false.
 	// Prevent deletion of the folder if it is not empty (contains dashboards or alert rules). Defaults to `false`.
@@ -75,6 +83,11 @@ type FolderParameters struct {
 	// Selector for a Organization in oss to populate orgId.
 	// +kubebuilder:validation:Optional
 	OrganizationSelector *v1.Selector `json:"organizationSelector,omitempty" tf:"-"`
+
+	// (String) The uid of the parent folder. If set, the folder will be nested. If not set, the folder will be created in the root folder.
+	// The uid of the parent folder. If set, the folder will be nested. If not set, the folder will be created in the root folder. Note: This requires the nestedFolders feature flag to be enabled on your Grafana instance.
+	// +kubebuilder:validation:Optional
+	ParentFolderUID *string `json:"parentFolderUID,omitempty" tf:"parent_folder_uid,omitempty"`
 
 	// (Boolean) Prevent deletion of the folder if it is not empty (contains dashboards or alert rules). Defaults to false.
 	// Prevent deletion of the folder if it is not empty (contains dashboards or alert rules). Defaults to `false`.

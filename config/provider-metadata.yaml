@@ -678,6 +678,7 @@ resources:
             title: (String) The title of the folder.
             uid: (String) Unique identifier.
             url: (String) The full URL of the folder.
+            parent_folder_uid: (String) The uid of the parent folder. If set, the folder will be nested. If not set, the folder will be created in the root folder.
         importStatements:
             - |-
               terraform import grafana_folder.by_integer_id {{folder_id}}
