@@ -6,8 +6,8 @@ PROJECT_REPO := github.com/grafana/crossplane-provider-grafana
 
 export TERRAFORM_VERSION := 1.3.9
 
-export TERRAFORM_PROVIDER_SOURCE := grafana/grafana
-export TERRAFORM_PROVIDER_REPO := https://github.com/grafana/terraform-provider-grafana
+export TERRAFORM_PROVIDER_SOURCE := gtn3010/grafana
+export TERRAFORM_PROVIDER_REPO := https://github.com/gtn3010/terraform-provider-grafana
 export TERRAFORM_PROVIDER_VERSION := 2.8.0
 export TERRAFORM_PROVIDER_DOWNLOAD_NAME := terraform-provider-grafana
 export TERRAFORM_NATIVE_PROVIDER_BINARY := terraform-provider-grafana_v2.8.0
